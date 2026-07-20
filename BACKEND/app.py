@@ -1,7 +1,10 @@
+import scientific
+from matrix import MatrixCalculator
+
 from fastapi import FastAPI, HTTPException 
 # here we are importing FastAPI and HTTPException from the fastapi module.
 # FastAPI is a modern web framework for building APIs with Python, and
-# HTTPException is used to handle errors and return appropriate HTTP responses.
+# HTTPException is used to handle errors and return appropriate HTTP responses.\
 
 from pydantic import BaseModel
 # here we are importing BaseModel from the pydantic module.
@@ -28,6 +31,15 @@ class Numbers(BaseModel):
 class Number(BaseModel):
     value: float
 # here we are defining a data model called Number that inherits from BaseModel.
+
+class MatrixInput(BaseModel):
+    matrix: list[list[float]]
+# here we are defining a data model called MatrixInput that inherits from BaseModel.
+
+class TwoMatrixInput(BaseModel):
+    matrix1: list[list[float]]
+    matrix2: list[list[float]]
+# here we are defining a data model called TwoMatrixInput that inherits from BaseModel.
 
 @app.get("/")
 def home():
@@ -186,3 +198,71 @@ def e():
 # here we are defining a route for the "/scientific/e" URL of the API.
 # This route accepts GET requests and does not expect any payload.
 # The function returns the value of e in a JSON response.
+
+
+# ====================================
+# Matrix Calculator APIs
+# ====================================
+
+@app.post("/matrix/add")
+def matrix_add(data: TwoMatrixInput):
+    return {
+        "result": MatrixCalculator.add(
+            data.matrix1,
+            data.matrix2
+        )
+    }
+
+
+@app.post("/matrix/subtract")
+def matrix_subtract(data: TwoMatrixInput):
+    return {
+        "result": MatrixCalculator.subtract(
+            data.matrix1,
+            data.matrix2
+        )
+    }
+
+
+@app.post("/matrix/multiply")
+def matrix_multiply(data: TwoMatrixInput):
+    return {
+        "result": MatrixCalculator.multiply(
+            data.matrix1,
+            data.matrix2
+        )
+    }
+
+
+@app.post("/matrix/transpose")
+def matrix_transpose(data: MatrixInput):
+    return {
+        "result": MatrixCalculator.transpose(data.matrix)
+    }
+
+
+@app.post("/matrix/determinant")
+def determinant(data: MatrixInput):
+    return {
+        "result": MatrixCalculator.determinant(data.matrix)
+    }
+
+
+@app.post("/matrix/inverse")
+def inverse(data: MatrixInput):
+    try:
+        return {
+            "result": MatrixCalculator.inverse(data.matrix)
+        }
+    except Exception:
+        raise HTTPException(
+            status_code=400,
+            detail="Matrix is singular and cannot be inverted."
+        )
+
+
+@app.post("/matrix/rank")
+def rank(data: MatrixInput):
+    return {
+        "result": MatrixCalculator.rank(data.matrix)
+    }
