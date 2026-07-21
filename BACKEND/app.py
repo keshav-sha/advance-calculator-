@@ -1,5 +1,5 @@
-import scientific
 from matrix import MatrixCalculator
+# here we are importing the MatrixCalculator class from the matrix module.
 
 from fastapi import FastAPI, HTTPException 
 # here we are importing FastAPI and HTTPException from the fastapi module.
@@ -53,14 +53,18 @@ def add(data: Numbers):
     return {
         "result": Calculator.add(data.a, data.b)
     }
-# here we are defining a route for the "/add" URL of the API. This route accepts POST requests and expects a JSON payload that matches the Numbers data model. The function adds the two numbers and returns the result in a JSON response.
+# here we are defining a route for the "/add" URL of the API. 
+# This route accepts POST requests and expects a JSON payload that matches the Numbers data model. 
+# The function adds the two numbers and returns the result in a JSON response.
 
 @app.post("/subtract")
 def subtract(data: Numbers):
     return {
         "result": Calculator.subtract(data.a, data.b)
     }
-# here we are defining a route for the "/subtract" URL of the API. This route accepts POST requests and expects a JSON payload that matches the Numbers data model. The function subtracts the two numbers and returns the result in a JSON response.
+# here we are defining a route for the "/subtract" URL of the API.
+# This route accepts POST requests and expects a JSON payload that matches the Numbers data model.
+# The function subtracts the two numbers and returns the result in a JSON response.
 
 
 @app.post("/multiply")
@@ -68,7 +72,9 @@ def multiply(data: Numbers):
     return {
         "result": Calculator.multiply(data.a, data.b)
     }
-# here we are defining a route for the "/multiply" URL of the API. This route accepts POST requests and expects a JSON payload that matches the Numbers data model. The function multiplies the two numbers and returns the result in a JSON response.
+# here we are defining a route for the "/multiply" URL of the API. 
+# This route accepts POST requests and expects a JSON payload that matches the Numbers data model.
+# The function multiplies the two numbers and returns the result in a JSON response.
 
 @app.post("/divide")
 def divide(data: Numbers):
@@ -78,35 +84,46 @@ def divide(data: Numbers):
         }
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
-# here we are defining a route for the "/divide" URL of the API. This route accepts POST requests and expects a JSON payload that matches the Numbers data model. The function divides the two numbers and returns the result in a JSON response. If a ValueError is raised (for example, if the second number is zero), an HTTPException is raised with a status code of 400 and the error message.
+# here we are defining a route for the "/divide" URL of the API. 
+# This route accepts POST requests and expects a JSON payload that matches the Numbers data model.
+# The function divides the two numbers and returns the result in a JSON response. 
+# If a ValueError is raised (for example, if the second number is zero), an HTTPException is raised with a status code of 400 and the error message.
 
 @app.post("/modulus")
 def modulus(data: Numbers):
     return {
         "result": Calculator.modulus(data.a, data.b)
     }
-# here we are defining a route for the "/modulus" URL of the API. This route accepts POST requests and expects a JSON payload that matches the Numbers data model. The function calculates the modulus of the two numbers and returns the result in a JSON response.
+# here we are defining a route for the "/modulus" URL of the API. 
+# This route accepts POST requests and expects a JSON payload that matches the Numbers data model.
+# The function calculates the modulus of the two numbers and returns the result in a JSON response.
 
 @app.post("/power")
 def power(data: Numbers):
     return {
         "result": Calculator.power(data.a, data.b)
     }
-# here we are defining a route for the "/power" URL of the API. This route accepts POST requests and expects a JSON payload that matches the Numbers data model. The function calculates the power of the first number raised to the second number and returns the result in a JSON response.
+# here we are defining a route for the "/power" URL of the API.
+# This route accepts POST requests and expects a JSON payload that matches the Numbers data model. 
+# The function calculates the power of the first number raised to the second number and returns the result in a JSON response.
 
 @app.post("/square")
 def square(data: Number):
     return {
         "result": Calculator.square(data.value)
     }
-# here we are defining a route for the "/square" URL of the API. This route accepts POST requests and expects a JSON payload that matches the Number data model. The function calculates the square of the number and returns the result in a JSON response.
+# here we are defining a route for the "/square" URL of the API. 
+# This route accepts POST requests and expects a JSON payload that matches the Number data model. 
+# The function calculates the square of the number and returns the result in a JSON response.
 
 @app.post("/cube")
 def cube(data: Number):
     return {
         "result": Calculator.cube(data.value)
     }
-# here we are defining a route for the "/cube" URL of the API. This route accepts POST requests and expects a JSON payload that matches the Number data model. The function calculates the cube of the number and returns the result in a JSON response.
+# here we are defining a route for the "/cube" URL of the API. 
+# This route accepts POST requests and expects a JSON payload that matches the Number data model. 
+# The function calculates the cube of the number and returns the result in a JSON response.
 
 @app.post("/sqrt")
 def square_root(data: Number):
@@ -212,7 +229,8 @@ def matrix_add(data: TwoMatrixInput):
             data.matrix2
         )
     }
-
+# here we are defining a route for the "/matrix/add" URL of the API.
+# This route accepts POST requests and expects a JSON payload that matches the TwoMatrixInput data model
 
 @app.post("/matrix/subtract")
 def matrix_subtract(data: TwoMatrixInput):
@@ -222,7 +240,8 @@ def matrix_subtract(data: TwoMatrixInput):
             data.matrix2
         )
     }
-
+# here we are defining a route for the "/matrix/subtract" URL of the API.
+# This route accepts POST requests and expects a JSON payload that matches the TwoMatrixInput data model.
 
 @app.post("/matrix/multiply")
 def matrix_multiply(data: TwoMatrixInput):
@@ -232,21 +251,24 @@ def matrix_multiply(data: TwoMatrixInput):
             data.matrix2
         )
     }
-
+# here we are defining a route for the "/matrix/multiply" URL of the API.
+# This route accepts POST requests and expects a JSON payload that matches the TwoMatrixInput data model.
 
 @app.post("/matrix/transpose")
 def matrix_transpose(data: MatrixInput):
     return {
         "result": MatrixCalculator.transpose(data.matrix)
     }
-
+# here we are defining a route for the "/matrix/transpose" URL of the API.
+# This route accepts POST requests and expects a JSON payload that matches the MatrixInput data model.
 
 @app.post("/matrix/determinant")
 def determinant(data: MatrixInput):
     return {
         "result": MatrixCalculator.determinant(data.matrix)
     }
-
+# here we are defining a route for the "/matrix/determinant" URL of the API.
+# This route accepts POST requests and expects a JSON payload that matches the MatrixInput data model.
 
 @app.post("/matrix/inverse")
 def inverse(data: MatrixInput):
@@ -259,10 +281,13 @@ def inverse(data: MatrixInput):
             status_code=400,
             detail="Matrix is singular and cannot be inverted."
         )
-
+# here we are defining a route for the "/matrix/inverse" URL of the API.
+# This route accepts POST requests and expects a JSON payload that matches the MatrixInput data model.
 
 @app.post("/matrix/rank")
 def rank(data: MatrixInput):
     return {
         "result": MatrixCalculator.rank(data.matrix)
     }
+# here we are defining a route for the "/matrix/rank" URL of the API.
+# This route accepts POST requests and expects a JSON payload that matches the MatrixInput data model.
