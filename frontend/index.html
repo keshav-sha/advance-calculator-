@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Advanced Calculator</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <i class="fa-solid fa-calculator"></i>
+
+            <h2>Calculator</h2>
+
+        </div>
+
+        <nav>
+
+            <a href="#" class="active">
+                <i class="fa-solid fa-house"></i>
+                Dashboard
+            </a>
+
+            <a href="#">
+                <i class="fa-solid fa-square-root-variable"></i>
+                Scientific
+            </a>
+
+            <a href="#">
+                <i class="fa-solid fa-table-cells-large"></i>
+                Matrix
+            </a>
+
+            <a href="#">
+                <i class="fa-solid fa-chart-column"></i>
+                Statistics
+            </a>
+
+            <a href="#">
+                <i class="fa-solid fa-money-bill-wave"></i>
+                Finance
+            </a>
+
+            <a href="#">
+                <i class="fa-solid fa-right-left"></i>
+                Converter
+            </a>
+
+            <a href="#">
+                <i class="fa-solid fa-dollar-sign"></i>
+                Currency
+            </a>
+
+            <a href="#">
+                <i class="fa-solid fa-chart-line"></i>
+                Graph
+            </a>
+
+            <a href="#">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+                History
+            </a>
+
+        </nav>
+
+    </aside>
+
+    <!-- Main Content -->
+
+    <main class="main">
+
+        <header>
+
+            <h1>Advanced Calculator Dashboard</h1>
+
+            <button id="themeButton">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+
+        </header>
+
+        <!-- Dashboard Cards -->
+
+        <section class="cards">
+
+            <div class="card">
+                <i class="fa-solid fa-plus"></i>
+                <h3>Basic Calculator</h3>
+            </div>
+
+            <div class="card">
+                <i class="fa-solid fa-square-root-variable"></i>
+                <h3>Scientific</h3>
+            </div>
+
+            <div class="card">
+                <i class="fa-solid fa-table-cells"></i>
+                <h3>Matrix</h3>
+            </div>
+
+            <div class="card">
+                <i class="fa-solid fa-chart-simple"></i>
+                <h3>Statistics</h3>
+            </div>
+
+            <div class="card">
+                <i class="fa-solid fa-money-bill-wave"></i>
+                <h3>Finance</h3>
+            </div>
+
+            <div class="card">
+                <i class="fa-solid fa-right-left"></i>
+                <h3>Unit Converter</h3>
+            </div>
+
+            <div class="card">
+                <i class="fa-solid fa-dollar-sign"></i>
+                <h3>Currency</h3>
+            </div>
+
+            <div class="card">
+                <i class="fa-solid fa-chart-line"></i>
+                <h3>Graph Plotter</h3>
+            </div>
+
+        </section>
+
+        <!-- Recent History -->
+
+        <section class="history">
+
+            <h2>Recent Calculations</h2>
+
+            <div id="historyContainer">
+
+                No history available.
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

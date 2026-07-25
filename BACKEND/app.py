@@ -48,7 +48,7 @@ from database import initialize_database
 from history import History
 # here we are importing the history class from the history
 
-from graph import GraphCalculator
+from backend.graph import GraphCalculator
 # here 
 #======================================================================================================================
 # CREATING AN INSTANCE OF THE FASTAPI CLASS
