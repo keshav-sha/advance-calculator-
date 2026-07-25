@@ -48,7 +48,8 @@ from database import initialize_database
 from history import History
 # here we are importing the history class from the history
 
-
+from graph import GraphCalculator
+# here 
 #======================================================================================================================
 # CREATING AN INSTANCE OF THE FASTAPI CLASS
 #======================================================================================================================
@@ -140,6 +141,17 @@ class QuadraticEquationInput(BaseModel):
 class ExpressionInput(BaseModel):
     expression: str
 # here we are defining a data model called ExpressionInput that inherits from BaseModel.
+
+class GraphInput(BaseModel):
+
+    expression: str
+
+    start: float = -10
+
+    end: float = 10
+
+    points: int = 200
+    
 
 #================================================================================================================================================
 # ROUTES FOR THE API
@@ -1450,3 +1462,36 @@ def clear_history():
         "message": "History cleared."
 
     }
+
+
+#==============================================================================================================================================
+# graph APIS
+#=====================================================================================================================================
+
+
+@app.post("/graph")
+def graph(data: GraphInput):
+
+    result = GraphCalculator.generate_graph(
+
+        data.expression,
+
+        data.start,
+
+        data.end,
+
+        data.points
+
+    )
+
+    History.save(
+
+        "Graph",
+
+        data.expression,
+
+        "Graph Generated"
+
+    )
+
+    return result
