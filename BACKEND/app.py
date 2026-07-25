@@ -1,5 +1,13 @@
+#==================================================================================================================================================
+# IMPORTING REQUIRED MODULES
+#==================================================================================================================================================
+
+
 from matrix import MatrixCalculator
 # here we are importing the MatrixCalculator class from the matrix module.
+
+from statistics import StatisticsCalculator
+# here we are importing the StatisticsCalculator class from the statistics module.
 
 from fastapi import FastAPI, HTTPException 
 # here we are importing FastAPI and HTTPException from the fastapi module.
@@ -12,9 +20,21 @@ from pydantic import BaseModel
 
 from scientific import ScientificCalculator
 # here we are importing the ScientificCalculator class from the scientific module.
+# it provides various scientific calculations such as trigonometric functions, logarithmic functions, and factorial calculations.
 
 from calculator import Calculator
 # here we are importing the Calculator class from the calculator module.
+# it provides basic arithmetic operations such as addition, subtraction, multiplication, division, modulus, power, square, cube, square root, and percentage calculations.
+
+from finance import FinanceCalculator
+# here we are importing the FinanceCalculator class from the finance module.
+# it provides various financial calculations such as EMI, GST, discount, and profit/loss calculations.
+
+
+#======================================================================================================================
+# CREATING AN INSTANCE OF THE FASTAPI CLASS
+#======================================================================================================================
+
 
 app = FastAPI(
     title="Calculator",
@@ -22,6 +42,12 @@ app = FastAPI(
     description="Professional Calculator Backend"
 )
 # here we are creating an instance of the FastAPI class and assigning it to the variable app.
+
+
+#================================================================================================================================
+# CLASSES FOR REQUEST BODIES
+#===================================================================================================================================
+
 
 class Numbers(BaseModel):
     a: float
@@ -40,6 +66,37 @@ class TwoMatrixInput(BaseModel):
     matrix1: list[list[float]]
     matrix2: list[list[float]]
 # here we are defining a data model called TwoMatrixInput that inherits from BaseModel.
+
+class NumberList(BaseModel):
+    numbers: list[float]
+# here we are defining a data model called NumberList that inherits from BaseModel.
+
+class InterestInput(BaseModel):
+    principal: float
+    rate: float
+    time: float
+# here we are defining a data model called InterestInput that inherits from BaseModel.
+
+class EMIInput(BaseModel):
+    principal: float
+    annual_rate: float
+    months: int
+# here we are defining a data model called EMIInput that inherits from BaseModel.
+
+class GSTInput(BaseModel):
+    amount: float
+    gst_percent: float
+# here we are defining a data model called GSTInput that inherits from BaseModel.
+
+class DiscountInput(BaseModel):
+    price: float
+    discount_percent: float
+# here we are defining a data model called DiscountInput that inherits from BaseModel.
+
+class ProfitLossInput(BaseModel):
+    cost_price: float
+    selling_price: float
+# here we are defining a data model called ProfitLossInput that inherits from BaseModel.
 
 @app.get("/")
 def home():
@@ -143,9 +200,9 @@ def percentage(data: Numbers):
 # here we are defining a route for the "/percentage" URL of the API. This route accepts POST requests and expects a JSON payload that matches the Numbers data model. The function calculates the percentage of the first number with respect to the second number and returns the result in a JSON response.
 
 
-# =====================================================================================
+# ================================================================================================================================================
 # Scientific Calculator APIs
-# =====================================================================================
+# =======================================================================================================================================================
 
 
 @app.post("/scientific/sin")
@@ -217,9 +274,9 @@ def e():
 # The function returns the value of e in a JSON response.
 
 
-# ====================================
+# ==================================================================================================================================================
 # Matrix Calculator APIs
-# ====================================
+# =============================================================================================================================================
 
 @app.post("/matrix/add")
 def matrix_add(data: TwoMatrixInput):
@@ -291,3 +348,127 @@ def rank(data: MatrixInput):
     }
 # here we are defining a route for the "/matrix/rank" URL of the API.
 # This route accepts POST requests and expects a JSON payload that matches the MatrixInput data model.
+
+# ==================================================================================================================================================
+# Statistics Calculator APIs
+# =========================================================================================================================================
+
+@app.post("/statistics/mean")
+def mean(data: NumberList):
+    return {"result": StatisticsCalculator.mean(data.numbers)}
+# here we are defining a route for the "/statistics/mean" URL of the API.
+# This route accepts POST requests and expects a JSON payload that matches the NumberList data model.
+
+@app.post("/statistics/median")
+def median(data: NumberList):
+    return {"result": StatisticsCalculator.median(data.numbers)}
+# here we are defining a route for the "/statistics/median" URL of the API.
+# This route accepts POST requests and expects a JSON payload that matches the NumberList data model.
+
+@app.post("/statistics/mode")
+def mode(data: NumberList):
+    return {"result": StatisticsCalculator.mode(data.numbers)}
+# here we are defining a route for the "/statistics/mode" URL of the API.
+# This route accepts POST requests and expects a JSON payload that matches the NumberList data model.
+
+
+@app.post("/statistics/variance")
+def variance(data: NumberList):
+    return {"result": StatisticsCalculator.variance(data.numbers)}
+# here we are defining a route for the "/statistics/variance" URL of the API.
+# This route accepts POST requests and expects a JSON payload that matches the NumberList data model.
+
+@app.post("/statistics/std")
+def standard_deviation(data: NumberList):
+    return {
+        "result": StatisticsCalculator.standard_deviation(data.numbers)
+    }
+# here we are defining a route for the "/statistics/std" URL of the API.
+# This route accepts POST requests and expects a JSON payload that matches the NumberList data model.
+
+@app.post("/statistics/min")
+def minimum(data: NumberList):
+    return {"result": StatisticsCalculator.minimum(data.numbers)}
+# here we are defining a route for the "/statistics/min" URL of the API.
+# This route accepts POST requests and expects a JSON payload that matches the NumberList data model.
+
+@app.post("/statistics/max")
+def maximum(data: NumberList):
+    return {"result": StatisticsCalculator.maximum(data.numbers)}
+# here we are defining a route for the "/statistics/max" URL of the API.
+# This route accepts POST requests and expects a JSON payload that matches the NumberList data model.
+
+@app.post("/statistics/range")
+def value_range(data: NumberList):
+    return {"result": StatisticsCalculator.value_range(data.numbers)}
+# here we are defining a route for the "/statistics/range" URL of the API.
+# This route accepts POST requests and expects a JSON payload that matches the NumberList data model.
+
+
+#==================================================================================================================================================
+# Financial Calculator APIs
+#==================================================================================================================================================
+
+
+@app.post("/finance/simple-interest")
+def simple_interest(data: InterestInput):
+    return {
+        "result": FinanceCalculator.simple_interest(
+            data.principal,
+            data.rate,
+            data.time
+        )
+    }
+# here we are defining a route for the "/finance/simple-interest" URL of the API.
+# This route accepts POST requests and expects a JSON payload that matches the InterestInput data model.
+
+@app.post("/finance/compound-interest")
+def compound_interest(data: InterestInput):
+    return {
+        "result": FinanceCalculator.compound_interest(
+            data.principal,
+            data.rate,
+            data.time
+        )
+    }
+# here we are defining a route for the "/finance/compound-interest" URL of the API.
+# This route accepts POST requests and expects a JSON payload that matches the InterestInput data model.
+
+@app.post("/finance/emi")
+def emi(data: EMIInput):
+    return {
+        "result": FinanceCalculator.emi(
+            data.principal,
+            data.annual_rate,
+            data.months
+        )
+    }
+# here we are defining a route for the "/finance/emi" URL of the API.
+# This route accepts POST requests and expects a JSON payload that matches the EMIInput data model.
+
+@app.post("/finance/gst")
+def gst(data: GSTInput):
+    return FinanceCalculator.gst(
+        data.amount,
+        data.gst_percent
+    )
+# here we are defining a route for the "/finance/gst" URL of the API.
+# This route accepts POST requests and expects a JSON payload that matches the GSTInput data model.
+
+@app.post("/finance/discount")
+def discount(data: DiscountInput):
+    return FinanceCalculator.discount(
+        data.price,
+        data.discount_percent
+    )
+# here we are defining a route for the "/finance/discount" URL of the API.
+# This route accepts POST requests and expects a JSON payload that matches the DiscountInput data model.    
+
+@app.post("/finance/profit-loss")
+def profit_loss(data: ProfitLossInput):
+    return FinanceCalculator.profit_loss(
+        data.cost_price,
+        data.selling_price
+    )
+# here we are defining a route for the "/finance/profit-loss" URL of the API.
+# This route accepts POST requests and expects a JSON payload that matches the ProfitLossInput data model
