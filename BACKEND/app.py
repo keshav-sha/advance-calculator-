@@ -3,53 +3,19 @@
 #==================================================================================================================================================
 
 
-from matrix import MatrixCalculator
-# here we are importing the MatrixCalculator class from the matrix module.
-#it provides various matrix operations such as addition, subtraction, multiplication, transpose, determinant, inverse, and rank calculations.
-
-from statistics import StatisticsCalculator
-# here we are importing the StatisticsCalculator class from the statistics module.
-
-from fastapi import FastAPI, HTTPException 
-# here we are importing FastAPI and HTTPException from the fastapi module.
-# FastAPI is a modern web framework for building APIs with Python, and
-# HTTPException is used to handle errors and return appropriate HTTP responses.\
-
-from pydantic import BaseModel
-# here we are importing BaseModel from the pydantic module.
-# BaseModel is a class that allows us to define data models with type validation and serialization.
-
-from scientific import ScientificCalculator
-# here we are importing the ScientificCalculator class from the scientific module.
-# it provides various scientific calculations such as trigonometric functions, logarithmic functions, and factorial calculations.
-
 from calculator import Calculator
-# here we are importing the Calculator class from the calculator module.
-# it provides basic arithmetic operations such as addition, subtraction, multiplication, division, modulus, power, square, cube, square root, and percentage calculations.
-
+from scientific import ScientificCalculator
+from matrix import MatrixCalculator
+from statistics import StatisticsCalculator
 from finance import FinanceCalculator
-# here we are importing the FinanceCalculator class from the finance module.
-# it provides various financial calculations such as EMI, GST, discount, and profit/loss calculations.
-
 from unit_converter import UnitConverter
-# here we are importing the UnitConverter class from the unit_converter module.
-# it provides various unit conversion methods for length, weight, temperature, time, and data storage.
-
 from currency_converter import CurrencyConverter
-# here we are importing the CurrencyConverter class from the currency_converter module.
-# it provides a method to convert currency amounts from one currency to another using the Frankfurter API.
-
 from equation import EquationSolver
-# here we are importing the EquationSolver class from the equation module.
-
-from database import initialize_database
-# here we are importing the initialize_database class from the database
-
+from graph import GraphCalculator
 from history import History
-# here we are importing the history class from the history
+from database import initialize_database
 
-from backend.graph import GraphCalculator
-# here 
+
 #======================================================================================================================
 # CREATING AN INSTANCE OF THE FASTAPI CLASS
 #======================================================================================================================
