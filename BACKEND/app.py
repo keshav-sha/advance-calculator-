@@ -1,26 +1,25 @@
 #==================================================================================================================================================
 # IMPORTING REQUIRED MODULES
 #==================================================================================================================================================
+# FastAPI Imports
+from fastapi import FastAPI, HTTPException
+from pydantic import BaseModel
 
-
+# Calculator Modules
 from calculator import Calculator
 from scientific import ScientificCalculator
 from matrix import MatrixCalculator
-from statistics import StatisticsCalculator
+from statistics import StatisticsCalculator   # or statistics_calculator if you renamed it
 from finance import FinanceCalculator
-from unit_converter import UnitConverter
 from currency_converter import CurrencyConverter
 from equation import EquationSolver
 from graph import GraphCalculator
 from history import History
 from database import initialize_database
 
-
 #======================================================================================================================
 # CREATING AN INSTANCE OF THE FASTAPI CLASS
 #======================================================================================================================
-
-
 app = FastAPI(
     title="Calculator",
     version="1.0.0"
