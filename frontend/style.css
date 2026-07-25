@@ -27,7 +27,7 @@ body{
    Sidebar
    ========================================== */
 
-.sidebar{
+ .sidebar{
 
     width:260px;
 
@@ -342,6 +342,61 @@ header{
     gap:20px;
 
 }
+
+}
+/* ==========================================
+   Light Theme
+   ========================================== */
+
+body.light-mode{
+
+    background:#f8fafc;
+
+    color:#1e293b;
+
+}
+
+body.light-mode .sidebar{
+
+    background:white;
+
+}
+
+body.light-mode .card{
+
+    background:white;
+
+    color:#1e293b;
+
+}
+
+body.light-mode #historyContainer{
+
+    background:white;
+
+    color:#1e293b;
+
+}
+
+body.light-mode .sidebar a{
+
+    color:#1e293b;
+
+}
+
+/* ==========================================
+   History Item
+   ========================================== */
+
+.history-item{
+
+    padding:15px;
+
+    margin-bottom:12px;
+
+    border-radius:10px;
+
+    background:rgba(255,255,255,.05);
 
 }
 /* ==========================================
