@@ -10,56 +10,127 @@
 
     <title>Basic Calculator</title>
 
-    <link rel="stylesheet"
-          href="../css/calculator.css">
+    <link rel="stylesheet" href="../css/calculator.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
     <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 </head>
 
 <body>
+    <div id="toast"></div>
+<div class="calculator-container">
 
-<div class="calculator">
+    <div class="calculator">
 
-    <h1>Basic Calculator</h1>
+        <div class="title">
 
-    <div class="display">
+            <a href="../index.html">
 
-        <input
-            type="number"
-            id="number1"
-            placeholder="First Number">
+                <i class="fa-solid fa-arrow-left"></i>
 
-        <input
-            type="number"
-            id="number2"
-            placeholder="Second Number">
+            </a>
 
-        <div id="result">
-            Result
+            <h2>Basic Calculator</h2>
+
         </div>
+
+        <div class="display">
+
+            <input
+                type="text"
+                id="display"
+                readonly>
+
+        </div>
+
+        <div class="buttons">
+
+            <button onclick="clearDisplay()" class="operator">AC</button>
+
+            <button onclick="deleteLast()" class="operator">⌫</button>
+
+            <button onclick="append('%')" class="operator">%</button>
+
+            <button onclick="append('/')" class="operator">÷</button>
+
+            <button onclick="append('7')">7</button>
+
+            <button onclick="append('8')">8</button>
+
+            <button onclick="append('9')">9</button>
+
+            <button onclick="append('*')" class="operator">×</button>
+
+            <button onclick="append('4')">4</button>
+
+            <button onclick="append('5')">5</button>
+
+            <button onclick="append('6')">6</button>
+
+            <button onclick="append('-')" class="operator">−</button>
+
+            <button onclick="append('1')">1</button>
+
+            <button onclick="append('2')">2</button>
+
+            <button onclick="append('3')">3</button>
+
+            <button onclick="append('+')" class="operator">+</button>
+
+            <button onclick="append('0')" class="zero">0</button>
+
+            <button onclick="append('.')">.</button>
+
+            <button onclick="calculate()" class="equal">=</button>
+
+        </div>
+<div class="buttons">
+
+    <button class="memory" onclick="memoryClear()">MC</button>
+
+    <button class="memory" onclick="memoryRecall()">MR</button>
+
+    <button class="memory" onclick="memoryAdd()">M+</button>
+
+    <button class="memory" onclick="memorySubtract()">M-</button>
+
+    <button class="scientific" onclick="square()">x²</button>
+
+    <button class="scientific" onclick="cube()">x³</button>
+
+    <button class="scientific" onclick="sqrt()">√x</button>
+
+    <button class="scientific" onclick="power()">xʸ</button>
+
+    <button class="scientific" onclick="percentage()">%</button>
+
+</div>
+<div class="history-panel">
+
+    <div class="history-header">
+
+        <h3>Calculation History</h3>
+
+        <button onclick="clearHistory()">
+            Clear
+        </button>
 
     </div>
 
-    <div class="buttons">
+    <div id="historyList">
 
-        <button onclick="add()">+</button>
+        <p>No calculations yet.</p>
 
-        <button onclick="subtract()">−</button>
+    </div>
 
-        <button onclick="multiply()">×</button>
-
-        <button onclick="divide()">÷</button>
-
-        <button onclick="square()">x²</button>
-
-        <button onclick="cube()">x³</button>
-
-        <button onclick="sqrt()">√x</button>
-
-        <button onclick="percentage()">%</button>
-
+</div>
     </div>
 
 </div>

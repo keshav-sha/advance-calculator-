@@ -117,7 +117,13 @@ class GraphInput(BaseModel):
 
     points: int = 200
     
+from pydantic import BaseModel
 
+class UnitConverterRequest(BaseModel):
+    category: str
+    from_unit: str
+    to_unit: str
+    value: float
 #================================================================================================================================================
 # ROUTES FOR THE API
 #================================================================================================================================================
@@ -333,8 +339,74 @@ def percentage(data: Numbers):
 # here we are defining a route for the "/percentage" URL of the API.
 # This route accepts POST requests and expects a JSON payload that matches the Numbers data model.
 # The function calculates the percentage of the first number with respect to the second number and returns the result in a JSON response.
+@app.post("/converter")
+def convert(request: UnitConverterRequest):
+    result = UnitConverter.convert(
+        request.category,
+        request.from_unit,
+        request.to_unit,
+        request.value
+    )
+
+    return {
+        "result": result
+    }
+
+from pydantic import BaseModel
+# ==========================================
+# Finance Pydantic Models
+# ==========================================
+
+from pydantic import BaseModel
 
 
+class FinanceRequest(BaseModel):
+    principal: float
+    rate: float
+    time: float
+
+
+class SIPRequest(BaseModel):
+    monthly_investment: float
+    rate: float
+    time: float
+
+
+class LoanRequest(BaseModel):
+    principal: float
+    rate: float
+    time: float
+
+
+class ROIRequest(BaseModel):
+    principal: float
+    final_amount: float
+
+
+class CAGRRequest(BaseModel):
+    beginning_value: float
+    ending_value: float
+    time: float
+
+class CurrencyRequest(BaseModel):
+    amount: float
+    from_currency: str
+    to_currency: str
+
+
+@app.post("/currency/convert")
+def convert_currency(request: CurrencyRequest):
+
+    result, rate = CurrencyConverter.convert(
+        request.amount,
+        request.from_currency,
+        request.to_currency
+    )
+
+    return {
+        "result": result,
+        "rate": rate
+    }
 # ================================================================================================================================================
 # Scientific Calculator APIs
 # =======================================================================================================================================================
@@ -1460,3 +1532,28 @@ def graph(data: GraphInput):
     )
 
     return result
+@app.post("/finance/simple-interest")
+def simple_interest(data: FinanceRequest):
+
+    result = FinanceCalculator.simple_interest(
+        data.principal,
+        data.rate,
+        data.time
+    )
+
+    return {
+        "result": result
+    }
+    @app.post("/finance/compound-interest")
+    
+    def compound_interest(data: FinanceRequest):
+        result = FinanceCalculator.compound_interest(
+        data.principal,
+        data.rate,
+        data.time
+    )
+
+    return {
+        "result": result
+    } 
+    

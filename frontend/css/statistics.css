@@ -1,0 +1,324 @@
+/* ==========================================
+   Statistics Calculator
+   ========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+
+    background:#0f172a;
+
+    color:white;
+
+}
+
+/* ===============================
+   Container
+================================ */
+
+.container{
+
+    width:90%;
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:40px;
+
+}
+
+/* ===============================
+   Header
+================================ */
+
+header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:35px;
+
+}
+
+header h1{
+
+    font-size:34px;
+
+}
+
+header a{
+
+    text-decoration:none;
+
+    color:white;
+
+    background:#2563eb;
+
+    padding:12px 20px;
+
+    border-radius:10px;
+
+    transition:.3s;
+
+}
+
+header a:hover{
+
+    background:#1d4ed8;
+
+}
+
+/* ===============================
+   Card
+================================ */
+
+.card{
+
+    background:#1e293b;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.3);
+
+}
+
+.card label{
+
+    display:block;
+
+    font-size:20px;
+
+    margin-bottom:15px;
+
+}
+
+.card textarea{
+
+    width:100%;
+
+    height:140px;
+
+    padding:20px;
+
+    border:none;
+
+    outline:none;
+
+    resize:none;
+
+    border-radius:12px;
+
+    background:#334155;
+
+    color:white;
+
+    font-size:18px;
+
+}
+
+/* ===============================
+   Buttons
+================================ */
+
+.buttons{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:15px;
+
+    margin-top:30px;
+
+}
+
+.buttons button{
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#2563eb;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    transition:.3s;
+
+}
+
+.buttons button:hover{
+
+    background:#1d4ed8;
+
+    transform:translateY(-4px);
+
+}
+
+/* ===============================
+   Result
+================================ */
+
+.result{
+
+    margin-top:40px;
+
+}
+
+.result h2{
+
+    margin-bottom:20px;
+
+}
+
+#resultBox{
+
+    background:#1e293b;
+
+    border-radius:15px;
+
+    padding:30px;
+
+    min-height:120px;
+
+    font-size:22px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+/* ===============================
+   Statistics Summary Cards
+================================ */
+
+.summary{
+
+    margin-top:40px;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:20px;
+
+}
+
+.summary-card{
+
+    background:#1e293b;
+
+    border-radius:15px;
+
+    padding:20px;
+
+    text-align:center;
+
+}
+
+.summary-card h3{
+
+    color:#38bdf8;
+
+    margin-bottom:10px;
+
+}
+
+.summary-card p{
+
+    font-size:24px;
+
+}
+
+/* ===============================
+   Scrollbar
+================================ */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#3b82f6;
+
+    border-radius:20px;
+
+}
+
+/* ===============================
+   Responsive
+================================ */
+
+@media(max-width:1000px){
+
+.buttons{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.summary{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:650px){
+
+.container{
+
+padding:20px;
+
+}
+
+header{
+
+flex-direction:column;
+
+gap:20px;
+
+}
+
+.buttons{
+
+grid-template-columns:1fr;
+
+}
+
+.summary{
+
+grid-template-columns:1fr;
+
+}
+
+header h1{
+
+font-size:26px;
+
+}
+
+}

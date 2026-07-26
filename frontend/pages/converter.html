@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Unit Converter</title>
+
+<link rel="stylesheet"
+href="../css/converter.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+
+<h1>
+
+<i class="fa-solid fa-right-left"></i>
+
+Unit Converter
+
+</h1>
+
+<a href="../index.html">
+
+Dashboard
+
+</a>
+
+</header>
+
+<div class="card">
+
+<div class="group">
+
+<label>Category</label>
+
+<select id="category">
+
+<option value="length">Length</option>
+
+<option value="weight">Weight</option>
+
+<option value="temperature">Temperature</option>
+
+<option value="area">Area</option>
+
+<option value="volume">Volume</option>
+
+<option value="time">Time</option>
+
+<option value="speed">Speed</option>
+
+<option value="energy">Energy</option>
+
+<option value="storage">Data Storage</option>
+
+</select>
+
+</div>
+
+<div class="group">
+
+<label>From</label>
+
+<select id="fromUnit">
+
+</select>
+
+</div>
+
+<div class="group">
+
+<label>To</label>
+
+<select id="toUnit">
+
+</select>
+
+</div>
+
+<div class="group">
+
+<label>Value</label>
+
+<input
+type="number"
+id="value"
+placeholder="Enter Value">
+
+</div>
+
+<button onclick="convertUnit()">
+
+Convert
+
+</button>
+
+</div>
+
+<div class="result">
+
+<h2>
+
+Result
+
+</h2>
+
+<div id="resultBox">
+
+Waiting...
+
+</div>
+
+</div>
+
+</div>
+
+<script src="../js/converter.js"></script>
+
+</body>
+
+</html>

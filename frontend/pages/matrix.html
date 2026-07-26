@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Matrix Calculator</title>
+
+    <link rel="stylesheet" href="../css/matrix.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <i class="fa-solid fa-table-cells"></i>
+
+            <h2>Matrix Calculator</h2>
+
+        </div>
+
+        <nav>
+
+            <a href="../index.html">
+
+                <i class="fa-solid fa-house"></i>
+
+                Dashboard
+
+            </a>
+
+            <a href="basic.html">
+
+                <i class="fa-solid fa-calculator"></i>
+
+                Basic Calculator
+
+            </a>
+
+            <a href="scientific.html">
+
+                <i class="fa-solid fa-square-root-variable"></i>
+
+                Scientific Calculator
+
+            </a>
+
+            <a href="matrix.html" class="active">
+
+                <i class="fa-solid fa-table-cells"></i>
+
+                Matrix Calculator
+
+            </a>
+
+        </nav>
+
+    </aside>
+
+    <!-- Main -->
+
+    <main class="main">
+
+        <header>
+
+            <h1>Matrix Calculator</h1>
+
+            <button id="themeButton">
+
+                <i class="fa-solid fa-moon"></i>
+
+            </button>
+
+        </header>
+
+        <!-- Controls -->
+
+        <section class="controls">
+
+            <label>Matrix Size</label>
+
+            <select id="matrixSize">
+
+                <option value="2">2 × 2</option>
+
+                <option value="3" selected>3 × 3</option>
+
+                <option value="4">4 × 4</option>
+
+                <option value="5">5 × 5</option>
+
+            </select>
+
+            <button id="generateBtn">
+
+                Generate Matrix
+
+            </button>
+
+        </section>
+
+        <!-- Matrices -->
+
+        <section class="matrix-section">
+
+            <!-- Matrix A -->
+
+            <div class="matrix-card">
+
+                <h2>
+
+                    Matrix A
+
+                </h2>
+
+                <div id="matrixA"
+                     class="matrix-grid">
+
+                </div>
+
+            </div>
+
+            <!-- Matrix B -->
+
+            <div class="matrix-card">
+
+                <h2>
+
+                    Matrix B
+
+                </h2>
+
+                <div id="matrixB"
+                     class="matrix-grid">
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Operations -->
+
+        <section class="operations">
+
+            <button onclick="addMatrix()">
+
+                <i class="fa-solid fa-plus"></i>
+
+                Add
+
+            </button>
+
+            <button onclick="subtractMatrix()">
+
+                <i class="fa-solid fa-minus"></i>
+
+                Subtract
+
+            </button>
+
+            <button onclick="multiplyMatrix()">
+
+                <i class="fa-solid fa-xmark"></i>
+
+                Multiply
+
+            </button>
+
+            <button onclick="transposeMatrix()">
+
+                <i class="fa-solid fa-arrow-right-arrow-left"></i>
+
+                Transpose
+
+            </button>
+
+            <button onclick="determinantMatrix()">
+
+                <i class="fa-solid fa-calculator"></i>
+
+                Determinant
+
+            </button>
+
+            <button onclick="inverseMatrix()">
+
+                <i class="fa-solid fa-rotate"></i>
+
+                Inverse
+
+            </button>
+
+            <button onclick="identityMatrix()">
+
+                <i class="fa-solid fa-border-all"></i>
+
+                Identity
+
+            </button>
+
+            <button onclick="scalarMultiply()">
+
+                <i class="fa-solid fa-superscript"></i>
+
+                Scalar
+
+            </button>
+
+        </section>
+
+        <!-- Result -->
+
+        <section class="result-card">
+
+            <h2>
+
+                Result
+
+            </h2>
+
+            <div id="resultMatrix"
+                 class="matrix-grid">
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="../js/matrix.js"></script>
+
+</body>
+
+</html>

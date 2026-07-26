@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>Advanced Calculator</title>
 
     <link rel="stylesheet" href="style.css">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 </head>
 
@@ -27,55 +35,98 @@
 
             <i class="fa-solid fa-calculator"></i>
 
-            <h2>Calculator</h2>
+            <h2>Advanced Calculator</h2>
 
         </div>
 
         <nav>
 
-            <a href="#" class="active">
+            <a href="index.html" class="active">
+
                 <i class="fa-solid fa-house"></i>
+
                 Dashboard
+
             </a>
 
-            <a href="#">
+            <a href="pages/basic.html">
+
+                <i class="fa-solid fa-plus"></i>
+
+                Basic Calculator
+
+            </a>
+
+            <a href="pages/scientific.html">
+
                 <i class="fa-solid fa-square-root-variable"></i>
+
                 Scientific
+
             </a>
 
-            <a href="#">
-                <i class="fa-solid fa-table-cells-large"></i>
+            <a href="pages/matrix.html">
+
+                <i class="fa-solid fa-table-cells"></i>
+
                 Matrix
+
             </a>
 
-            <a href="#">
+            <a href="pages/statistics.html">
+
                 <i class="fa-solid fa-chart-column"></i>
+
                 Statistics
+
             </a>
 
-            <a href="#">
+            <a href="pages/finance.html">
+
                 <i class="fa-solid fa-money-bill-wave"></i>
+
                 Finance
+
             </a>
 
-            <a href="#">
+            <a href="pages/converter.html">
+
                 <i class="fa-solid fa-right-left"></i>
-                Converter
+
+                Unit Converter
+
             </a>
 
-            <a href="#">
+            <a href="pages/currency.html">
+
                 <i class="fa-solid fa-dollar-sign"></i>
+
                 Currency
+
             </a>
 
-            <a href="#">
+            <a href="pages/equation.html">
+
+                <i class="fa-solid fa-square-root-alt"></i>
+
+                Equation Solver
+
+            </a>
+
+            <a href="pages/graph.html">
+
                 <i class="fa-solid fa-chart-line"></i>
-                Graph
+
+                Graph Plotter
+
             </a>
 
-            <a href="#">
+            <a href="pages/history.html">
+
                 <i class="fa-solid fa-clock-rotate-left"></i>
+
                 History
+
             </a>
 
         </nav>
@@ -86,59 +137,157 @@
 
     <main class="main">
 
+        <!-- Header -->
+
         <header>
 
-            <h1>Advanced Calculator Dashboard</h1>
+            <div>
 
-            <button id="themeButton">
-                <i class="fa-solid fa-moon"></i>
-            </button>
+                <h1>Advanced Calculator Dashboard</h1>
+
+                <p>Professional Calculator built with FastAPI, HTML, CSS and JavaScript</p>
+
+            </div>
+
+            <div class="header-right">
+
+                <button id="themeButton">
+
+                    <i class="fa-solid fa-moon"></i>
+
+                </button>
+
+            </div>
 
         </header>
+
+        <!-- API Status -->
+
+        <section class="status">
+
+            <div class="status-card">
+
+                <i class="fa-solid fa-server"></i>
+
+                <div>
+
+                    <h3>Backend Status</h3>
+
+                    <p id="apiStatus">
+
+                        Checking...
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
 
         <!-- Dashboard Cards -->
 
         <section class="cards">
 
-            <div class="card">
+            <a href="pages/basic.html" class="card">
+
                 <i class="fa-solid fa-plus"></i>
+
                 <h3>Basic Calculator</h3>
-            </div>
 
-            <div class="card">
+                <p>Add, Subtract, Multiply, Divide</p>
+
+            </a>
+
+            <a href="pages/scientific.html" class="card">
+
                 <i class="fa-solid fa-square-root-variable"></i>
-                <h3>Scientific</h3>
-            </div>
 
-            <div class="card">
+                <h3>Scientific Calculator</h3>
+
+                <p>Trigonometry, Log, Power, Root</p>
+
+            </a>
+
+            <a href="pages/matrix.html" class="card">
+
                 <i class="fa-solid fa-table-cells"></i>
-                <h3>Matrix</h3>
-            </div>
 
-            <div class="card">
-                <i class="fa-solid fa-chart-simple"></i>
+                <h3>Matrix Calculator</h3>
+
+                <p>Matrix Operations</p>
+
+            </a>
+
+            <a href="pages/statistics.html" class="card">
+
+                <i class="fa-solid fa-chart-column"></i>
+
                 <h3>Statistics</h3>
-            </div>
 
-            <div class="card">
+                <p>Mean, Median, Mode, SD</p>
+
+            </a>
+
+            <a href="pages/finance.html" class="card">
+
                 <i class="fa-solid fa-money-bill-wave"></i>
+
                 <h3>Finance</h3>
-            </div>
 
-            <div class="card">
+                <p>Interest, EMI, SIP</p>
+
+            </a>
+
+            <a href="pages/converter.html" class="card">
+
                 <i class="fa-solid fa-right-left"></i>
+
                 <h3>Unit Converter</h3>
-            </div>
 
-            <div class="card">
+                <p>Length, Weight, Temperature</p>
+
+            </a>
+
+            <a href="pages/currency.html" class="card">
+
                 <i class="fa-solid fa-dollar-sign"></i>
-                <h3>Currency</h3>
-            </div>
 
-            <div class="card">
+                <h3>Currency Converter</h3>
+
+                <p>Live Currency Conversion</p>
+
+            </a>
+
+            <a href="pages/equation.html" class="card">
+
+                <i class="fa-solid fa-square-root-alt"></i>
+
+                <h3>Equation Solver</h3>
+
+                <p>Linear & Quadratic Equations</p>
+
+            </a>
+
+            <a href="pages/graph.html" class="card">
+
                 <i class="fa-solid fa-chart-line"></i>
+
                 <h3>Graph Plotter</h3>
-            </div>
+
+                <p>Plot Mathematical Functions</p>
+
+            </a>
+
+            <a href="pages/history.html" class="card">
+
+                <i class="fa-solid fa-clock-rotate-left"></i>
+
+                <h3>History</h3>
+
+                <p>View Saved Calculations</p>
+
+            </a>
 
         </section>
 
@@ -146,15 +295,44 @@
 
         <section class="history">
 
-            <h2>Recent Calculations</h2>
+            <div class="history-header">
+
+                <h2>
+
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+
+                    Recent Calculations
+
+                </h2>
+
+                <button onclick="loadHistory()">
+
+                    Refresh
+
+                </button>
+
+            </div>
 
             <div id="historyContainer">
 
-                No history available.
+                Loading...
 
             </div>
 
         </section>
+
+        <!-- Footer -->
+
+        <footer>
+
+            <p>
+
+                © 2026 Advanced Calculator |
+                Developed using FastAPI + HTML + CSS + JavaScript
+
+            </p>
+
+        </footer>
 
     </main>
 
@@ -163,4 +341,5 @@
 <script src="script.js"></script>
 
 </body>
+
 </html>

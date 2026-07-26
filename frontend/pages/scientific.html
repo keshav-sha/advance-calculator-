@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Scientific Calculator</title>
+
+<link rel="stylesheet"
+      href="../css/scientific.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="calculator">
+
+<div class="top">
+
+<a href="../index.html">
+
+<i class="fa-solid fa-arrow-left"></i>
+
+</a>
+
+<h2>Scientific Calculator</h2>
+
+</div>
+
+<input
+type="text"
+id="display"
+readonly>
+
+<div class="buttons">
+
+<button onclick="memoryClear()">MC</button>
+
+<button onclick="memoryRecall()">MR</button>
+
+<button onclick="memoryAdd()">M+</button>
+
+<button onclick="memorySubtract()">M-</button>
+
+<button onclick="sin()">sin</button>
+
+<button onclick="cos()">cos</button>
+
+<button onclick="tan()">tan</button>
+
+<button onclick="log10()">log</button>
+
+<button onclick="ln()">ln</button>
+
+<button onclick="sqrt()">√</button>
+
+<button onclick="power()">xʸ</button>
+
+<button onclick="factorial()">x!</button>
+
+<button onclick="pi()">π</button>
+
+<button onclick="euler()">e</button>
+
+<button onclick="clearDisplay()">AC</button>
+
+<button onclick="calculate()">=</button>
+
+</div>
+
+</div>
+
+<script src="../js/scientific.js"></script>
+
+</body>
+
+</html>

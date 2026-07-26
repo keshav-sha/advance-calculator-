@@ -1,0 +1,161 @@
+    <!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Statistics Calculator</title>
+
+<link rel="stylesheet"
+href="../css/statistics.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <header>
+
+        <h1>
+
+            <i class="fa-solid fa-chart-column"></i>
+
+            Statistics Calculator
+
+        </h1>
+
+        <a href="../index.html">
+
+            Dashboard
+
+        </a>
+
+    </header>
+
+    <div class="card">
+
+        <label>
+
+            Enter Numbers
+
+        </label>
+
+        <textarea
+        id="numbers"
+        placeholder="Example:
+12,15,18,20,25">
+
+        </textarea>
+
+        <div class="buttons">
+
+            <button onclick="mean()">
+
+                Mean
+
+            </button>
+
+            <button onclick="median()">
+
+                Median
+
+            </button>
+
+            <button onclick="mode()">
+
+                Mode
+
+            </button>
+
+            <button onclick="variance()">
+
+                Variance
+
+            </button>
+
+            <button onclick="stdDeviation()">
+
+                Standard Deviation
+
+            </button>
+
+            <button onclick="minimum()">
+
+                Minimum
+
+            </button>
+
+            <button onclick="maximum()">
+
+                Maximum
+
+            </button>
+
+            <button onclick="sum()">
+
+                Sum
+
+            </button>
+
+            <button onclick="count()">
+
+                Count
+
+            </button>
+
+            <button onclick="range()">
+
+                Range
+
+            </button>
+
+            <button onclick="quartiles()">
+
+                Quartiles
+
+            </button>
+
+            <button onclick="percentile()">
+
+                Percentile
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="result">
+
+        <h2>
+
+            Result
+
+        </h2>
+
+        <div id="resultBox">
+
+            Waiting for calculation...
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="../js/statistics.js"></script>
+
+</body>
+
+</html>

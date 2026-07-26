@@ -1,0 +1,297 @@
+/* ===========================================
+   Unit Converter
+   Professional UI
+=========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+
+    background:#0f172a;
+    color:white;
+    min-height:100vh;
+
+}
+
+/* ===============================
+   Container
+=============================== */
+
+.container{
+
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+    padding:40px;
+
+}
+
+/* ===============================
+   Header
+=============================== */
+
+header{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:40px;
+
+}
+
+header h1{
+
+    font-size:34px;
+
+}
+
+header a{
+
+    text-decoration:none;
+    color:white;
+    background:#2563eb;
+    padding:12px 22px;
+    border-radius:12px;
+    transition:.3s;
+
+}
+
+header a:hover{
+
+    background:#1d4ed8;
+
+}
+
+/* ===============================
+   Card
+=============================== */
+
+.card{
+
+    background:#1e293b;
+
+    border-radius:20px;
+
+    padding:35px;
+
+    box-shadow:0 20px 45px rgba(0,0,0,.35);
+
+}
+
+/* ===============================
+   Form
+=============================== */
+
+.group{
+
+    margin-bottom:25px;
+
+}
+
+.group label{
+
+    display:block;
+
+    margin-bottom:10px;
+
+    font-weight:600;
+
+}
+
+.group select,
+.group input{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:12px;
+
+    outline:none;
+
+    background:#334155;
+
+    color:white;
+
+    font-size:16px;
+
+}
+
+/* ===============================
+   Convert Button
+=============================== */
+
+button{
+
+    width:100%;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:#2563eb;
+
+    color:white;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    background:#1d4ed8;
+
+    transform:translateY(-3px);
+
+}
+
+/* ===============================
+   Result
+=============================== */
+
+.result{
+
+    margin-top:40px;
+
+}
+
+.result h2{
+
+    margin-bottom:20px;
+
+}
+
+#resultBox{
+
+    background:#1e293b;
+
+    border-radius:15px;
+
+    min-height:120px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:28px;
+
+    padding:30px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.3);
+
+}
+
+/* ===============================
+   Quick Conversion Cards
+=============================== */
+
+.quick-convert{
+
+    margin-top:40px;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:20px;
+
+}
+
+.quick-card{
+
+    background:#1e293b;
+
+    padding:20px;
+
+    border-radius:15px;
+
+    text-align:center;
+
+    transition:.3s;
+
+}
+
+.quick-card:hover{
+
+    transform:translateY(-5px);
+
+    background:#2563eb;
+
+}
+
+/* ===============================
+   Scrollbar
+=============================== */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#2563eb;
+
+    border-radius:20px;
+
+}
+
+/* ===============================
+   Responsive
+=============================== */
+
+@media(max-width:900px){
+
+.quick-convert{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:650px){
+
+.container{
+
+padding:20px;
+
+}
+
+header{
+
+flex-direction:column;
+
+gap:20px;
+
+}
+
+.quick-convert{
+
+grid-template-columns:1fr;
+
+}
+
+header h1{
+
+font-size:26px;
+
+}
+
+}

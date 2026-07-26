@@ -1,0 +1,286 @@
+/* =====================================================
+   Financial Calculator
+   Professional UI
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+
+    background:#0f172a;
+    color:white;
+    min-height:100vh;
+
+}
+
+/* ============================
+   Container
+============================ */
+
+.container{
+
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+    padding:40px;
+
+}
+
+/* ============================
+   Header
+============================ */
+
+header{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:40px;
+
+}
+
+header h1{
+
+    font-size:34px;
+
+}
+
+header a{
+
+    text-decoration:none;
+    color:white;
+    background:#2563eb;
+    padding:12px 20px;
+    border-radius:12px;
+    transition:.3s;
+
+}
+
+header a:hover{
+
+    background:#1d4ed8;
+
+}
+
+/* ============================
+   Card
+============================ */
+
+.card{
+
+    background:#1e293b;
+
+    border-radius:20px;
+
+    padding:35px;
+
+    box-shadow:0 20px 45px rgba(0,0,0,.35);
+
+}
+
+/* ============================
+   Inputs
+============================ */
+
+.input-group{
+
+    margin-bottom:25px;
+
+}
+
+.input-group label{
+
+    display:block;
+
+    margin-bottom:10px;
+
+    font-weight:600;
+
+}
+
+.input-group input,
+
+.input-group select{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:12px;
+
+    background:#334155;
+
+    color:white;
+
+    font-size:17px;
+
+}
+
+/* ============================
+   Button
+============================ */
+
+button{
+
+    width:100%;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:15px;
+
+    background:#2563eb;
+
+    color:white;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    background:#1d4ed8;
+
+    transform:translateY(-3px);
+
+}
+
+/* ============================
+   Result
+============================ */
+
+.result{
+
+    margin-top:40px;
+
+}
+
+.result h2{
+
+    margin-bottom:20px;
+
+}
+
+#resultBox{
+
+    background:#1e293b;
+
+    border-radius:18px;
+
+    min-height:140px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:30px;
+
+    font-size:22px;
+
+    text-align:center;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.3);
+
+}
+
+/* ============================
+   Summary Cards
+============================ */
+
+.summary{
+
+    margin-top:40px;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:20px;
+
+}
+
+.summary-card{
+
+    background:#1e293b;
+
+    border-radius:18px;
+
+    padding:20px;
+
+    text-align:center;
+
+}
+
+.summary-card h3{
+
+    color:#38bdf8;
+
+    margin-bottom:10px;
+
+}
+
+.summary-card p{
+
+    font-size:24px;
+
+}
+
+/* ============================
+   Responsive
+============================ */
+
+@media(max-width:900px){
+
+.summary{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:650px){
+
+.container{
+
+padding:20px;
+
+}
+
+header{
+
+flex-direction:column;
+
+gap:20px;
+
+}
+
+.summary{
+
+grid-template-columns:1fr;
+
+}
+
+header h1{
+
+font-size:26px;
+
+}
+
+}

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Equation Solver</title>
+
+<link rel="stylesheet" href="../css/equation.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+
+<h1>
+
+<i class="fa-solid fa-square-root-variable"></i>
+
+Equation Solver
+
+</h1>
+
+<a href="../index.html">
+
+<i class="fa-solid fa-house"></i>
+
+Dashboard
+
+</a>
+
+</header>
+
+<div class="card">
+
+<div class="group">
+
+<label>Equation Type</label>
+
+<select id="equationType">
+
+<option value="linear">Linear Equation</option>
+
+<option value="quadratic">Quadratic Equation</option>
+
+<option value="polynomial">Polynomial Equation</option>
+
+<option value="simultaneous">Simultaneous Equation</option>
+
+</select>
+
+</div>
+
+<div id="dynamicInputs">
+
+<div class="group">
+
+<label>a</label>
+
+<input
+type="number"
+id="a"
+placeholder="Coefficient a">
+
+</div>
+
+<div class="group">
+
+<label>b</label>
+
+<input
+type="number"
+id="b"
+placeholder="Coefficient b">
+
+</div>
+
+<div class="group">
+
+<label>c</label>
+
+<input
+type="number"
+id="c"
+placeholder="Coefficient c">
+
+</div>
+
+</div>
+
+<button onclick="solveEquation()">
+
+<i class="fa-solid fa-calculator"></i>
+
+Solve Equation
+
+</button>
+
+</div>
+
+<div class="result">
+
+<h2>
+
+Solution
+
+</h2>
+
+<div id="resultBox">
+
+Waiting for calculation...
+
+</div>
+
+</div>
+
+</div>
+
+<script src="../js/equation.js"></script>
+
+</body>
+
+</html>
